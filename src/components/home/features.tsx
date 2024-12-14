@@ -11,7 +11,7 @@ const FeaturesSection: React.FC = () => {
         heading="Powerful Features to Simplify Your Scheduling"
         para="Discover how our AI-driven tools can transform your productivity and streamline your day"
       />
-      <div className="w-[80%] space-y-6">
+      <div className="md:w-[80%] space-y-6">
         {Array.from({ length: 6 }).map((_, i) => (
           <FeaturesCard key={i} />
         ))}

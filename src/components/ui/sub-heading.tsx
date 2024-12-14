@@ -20,6 +20,7 @@ const SubHeading = ({ heading, para }: HeadingProps) => {
   useGSAP(() => {
     gsap.set(headRef.current, {
       scale: 0.9,
+      filter: "blur(10px)",
     });
     gsap.set(headRef1.current, {
       y: 150,
@@ -36,6 +37,7 @@ const SubHeading = ({ heading, para }: HeadingProps) => {
       opacity: 1,
       stagger: 0.5,
       duration: 0.5,
+      filter: "blur(0px)",
     });
 
     gsap.to(headRef1.current, {

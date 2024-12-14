@@ -20,6 +20,7 @@ const FeaturesCard: React.FC = () => {
       x: -800,
       opacity: 0.2,
       rotate: "-45deg",
+      filter: "blur(10px)",
     });
 
     gsap.to(boxRef1.current, {
@@ -36,11 +37,13 @@ const FeaturesCard: React.FC = () => {
       duration: 1,
       stagger: 1,
       ease: "power1.inOut",
+      filter: "blur(0px)",
     });
     gsap.set(boxRef2.current, {
       x: 800,
       opacity: 0.2,
       rotate: "45deg",
+      filter: "blur(10px)",
     });
 
     gsap.to(boxRef2.current, {
@@ -57,11 +60,15 @@ const FeaturesCard: React.FC = () => {
       duration: 1,
       stagger: 1,
       ease: "power1.inOut",
+      filter: "blur(0px)",
     });
   });
 
   return (
-    <div ref={wrapperRef} className="grid grid-cols-2 items-center gap-8">
+    <div
+      ref={wrapperRef}
+      className="grid grid-cols-1 md:grid-cols-2 items-center gap-8"
+    >
       <div
         ref={boxRef1}
         className="relative md:shadow-xl border border-white/30 flex items-start flex-col overflow-hidden rounded-xl gap-6 p-8  capitalize bg-gradient-to-r from-purple-400/10 to-purple-900/50"
@@ -79,10 +86,10 @@ const FeaturesCard: React.FC = () => {
           icon={<CalendarCheck size={18} />}
           renderText="effortless scheduling"
         />
-        <h4 className="capitalize font-heading w-[80%] font-bold text-5xl bg-gradient-to-bl from-purple-100 to-purple-600 text-transparent bg-clip-text">
+        <h4 className="capitalize font-heading w-full md:w-[80%] font-bold text-xl md:text-5xl bg-gradient-to-bl from-purple-100 to-purple-600 text-transparent bg-clip-text">
           Automate Meeting Scheduling
         </h4>
-        <p className="font-normal font-body text-start text-sm w-[60%]  md:text-md text-white/80">
+        <p className="font-normal font-body text-start text-sm w-full md:w-[60%]  md:text-md text-white/80">
           Our solution reduces manual effort, minimizes errors, and ensures
           seamless coordination, allowing you to focus on what truly matters.
         </p>
@@ -104,10 +111,10 @@ const FeaturesCard: React.FC = () => {
           icon={<CalendarCheck size={18} />}
           renderText="effortless scheduling"
         />
-        <h4 className="capitalize font-heading w-[80%] font-bold text-5xl bg-gradient-to-bl from-purple-100 to-purple-600 text-transparent bg-clip-text">
+        <h4 className="capitalize font-heading w-full md:w-[80%] font-bold text-xl md:text-5xl bg-gradient-to-bl from-purple-100 to-purple-600 text-transparent bg-clip-text">
           Automate Meeting Scheduling
         </h4>
-        <p className="font-normal font-body text-start text-sm w-[60%]  md:text-md text-white/80">
+        <p className="font-normal font-body text-start text-sm w-full md:w-[60%]  md:text-md text-white/80">
           Our solution reduces manual effort, minimizes errors, and ensures
           seamless coordination, allowing you to focus on what truly matters.
         </p>
