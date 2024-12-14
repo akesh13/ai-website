@@ -1,39 +1,39 @@
-"use client"
-import React, { useState } from 'react';
-import { SparklesText } from '../magicui/sparkleText';
+"use client";
+import React, { useState } from "react";
+import { SparklesText } from "../magicui/sparkleText";
 
-const BorderMenu = ({renderText}:{renderText:string}) => {
+const BorderMenu = ({ renderText }: { renderText: string }) => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
     <div className="flex items-center justify-center">
-      <div 
+      <div
         className="relative group cursor-pointer"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
-        {
-            !isHovered ? (
-                <li className="text-md capitalize font-normal text-white font-body pb-2">
-                {renderText}
-              </li>
-            ) : (
-                <SparklesText className='text-md capitalize font-normal text-white font-body pb-2' text={renderText} />
+        {!isHovered ? (
+          <li className="text-md capitalize font-normal text-white font-body pb-2">
+            {renderText}
+          </li>
+        ) : (
+          <SparklesText
+            className="text-md capitalize font-normal text-white font-body pb-2"
+            text={renderText}
+          />
+        )}
 
-            )
-        }
-       
-        <div 
+        <div
           className={`
             absolute 
             bottom-0 
             left-0 
             h-0.5 
-            bg-violet-800
+            bg-purple-600
             transition-all 
             duration-300 
             ease-in-out
-            ${isHovered ? 'w-full' : 'w-0'}
+            ${isHovered ? "w-full" : "w-0"}
           `}
         />
       </div>
