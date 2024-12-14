@@ -3,7 +3,7 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 gsap.registerPlugin(ScrollTrigger);
 
 //types
@@ -16,11 +16,15 @@ const SubHeading = ({ heading, para }: HeadingProps) => {
   const headRef = useRef(null);
   const headRef1 = useRef(null);
   const wrapperRef = useRef(null);
+
   useGSAP(() => {
-    gsap.set([headRef.current, headRef1.current], {
-      scale: 0,
+    gsap.set(headRef.current, {
+      scale: 0.9,
     });
-    gsap.to([headRef.current, headRef1.current], {
+    gsap.set(headRef1.current, {
+      y: 150,
+    });
+    gsap.to([headRef.current], {
       scrollTrigger: {
         trigger: wrapperRef.current,
         start: "top 80%",
@@ -31,6 +35,21 @@ const SubHeading = ({ heading, para }: HeadingProps) => {
       scale: 1,
       opacity: 1,
       stagger: 0.5,
+      duration: 0.5,
+    });
+
+    gsap.to(headRef1.current, {
+      scrollTrigger: {
+        trigger: wrapperRef.current,
+        start: "top 80%",
+        end: "bottom bottom",
+        toggleActions: "play none play reverse",
+        // markers: true,
+      },
+      y: 0,
+      duration: 0.5,
+      delay: 0.2,
+      ease: "power1.inOut",
     });
   });
   return (

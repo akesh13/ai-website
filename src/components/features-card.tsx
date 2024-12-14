@@ -35,6 +35,7 @@ const FeaturesCard: React.FC = () => {
       rotate: 0,
       duration: 1,
       stagger: 1,
+      ease: "power1.inOut",
     });
     gsap.set(boxRef2.current, {
       x: 800,
@@ -55,6 +56,7 @@ const FeaturesCard: React.FC = () => {
       rotate: 0,
       duration: 1,
       stagger: 1,
+      ease: "power1.inOut",
     });
   });
 
