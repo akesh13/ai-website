@@ -34,13 +34,14 @@ const NavMenu: React.FC = () => {
 
   useGSAP(() => {
     gsap.set(wrapperRef.current, {
-      y: "-160",
+      y: "-40",
     });
 
     gsap.to(wrapperRef.current, {
       y: 0,
       opacity: 1,
       ease: "power1.inOut",
+      duration: 0.8,
     });
   });
 

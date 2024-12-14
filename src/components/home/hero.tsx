@@ -10,17 +10,18 @@ const HeroHome: React.FC = () => {
   const wrapperRef = useRef(null);
   useGSAP(() => {
     gsap.set(wrapperRef.current, {
-      y: "200",
-      scale: 0.5,
+      y: "40",
+      //   scale: 0.5,
     });
     gsap.to(wrapperRef.current, {
       y: "0",
       opacity: 1,
-      scale: 1,
+      //   scale: 1,
+      duration: 1,
     });
   });
   return (
-    <section className="flex flex-col w-full items-center justify-end gap-8 h-[80vh] overflow-hidden">
+    <section className="relative flex flex-col w-full items-center justify-end gap-8 h-[80vh] overflow-hidden">
       <Meteors number={80} />
 
       <div

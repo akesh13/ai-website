@@ -9,7 +9,7 @@ const HomeComponent: React.FC = () => {
     <Lenis>
       <HeroHome />
       <ClientsSection />
-      {/* <FeaturesSection /> */}
+      <FeaturesSection />
     </Lenis>
   );
 };
